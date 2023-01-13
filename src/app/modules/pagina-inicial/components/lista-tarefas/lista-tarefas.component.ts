@@ -9,14 +9,15 @@ import { ListaTarefas } from '../../model/lista-tarefas';
   styleUrls: ['./lista-tarefas.component.scss'],
 })
 export class ListaTarefasComponent implements OnInit {
-  public listaTarefas: Array<ListaTarefas> = [
-    { tarefa: 'Minha nova Tarefa', finalizado: true },
-    { tarefa: 'Minha nova Tarefa 2', finalizado: false },
-  ];
+  public listaTarefas: Array<ListaTarefas> = [];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  public setEventListaTarefas(evento: string) {
+    this.listaTarefas.push({ tarefa: evento, finalizado: false });
+  }
 
   public excluirItemListaTarefa(evento: number) {
     this.listaTarefas.splice(evento, 1);

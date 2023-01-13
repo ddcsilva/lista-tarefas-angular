@@ -11,5 +11,5 @@
   </ul>
 </section>
 
-<app-campo-adicionar-itens></app-campo-adicionar-itens>
+<app-campo-adicionar-itens (eventItemListaTarefa)="setEventListaTarefas($event)"></app-campo-adicionar-itens>
 <app-botao-exclusao-total *ngIf="listaTarefas.length" (click)="excluirTodosItensListaTarefa()"></app-botao-exclusao-total>
