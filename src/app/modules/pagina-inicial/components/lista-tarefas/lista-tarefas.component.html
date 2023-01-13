@@ -4,7 +4,7 @@
       <input type="checkbox" [(ngModel)]="item.finalizado">
       <input type="text" [(ngModel)]="item.tarefa">
 
-      <button>
+      <button (click)="excluirItemListaTarefa(i)">
         <img src="assets/icons/icon-trash.svg" alt="">
       </button>
     </li>
@@ -12,4 +12,4 @@
 </section>
 
 <app-campo-adicionar-itens></app-campo-adicionar-itens>
-<app-botao-exclusao-total *ngIf="listaTarefas.length"></app-botao-exclusao-total>
+<app-botao-exclusao-total *ngIf="listaTarefas.length" (click)="excluirTodosItensListaTarefa()"></app-botao-exclusao-total>

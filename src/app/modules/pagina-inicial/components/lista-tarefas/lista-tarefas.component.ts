@@ -17,4 +17,17 @@ export class ListaTarefasComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  public excluirItemListaTarefa(evento: number) {
+    this.listaTarefas.splice(evento, 1);
+  }
+
+  public excluirTodosItensListaTarefa() {
+    const confirmado = window.confirm(
+      'Você deseja realmente EXCLUIR todos as tarefas?'
+    );
+    if (confirmado) {
+      this.listaTarefas = [];
+    }
+  }
 }
