@@ -1,8 +1,8 @@
-<section>
-  <ul>
-    <li>
-      <input type="checkbox">
-      <input type="text">
+<section [ngClass]="{'loading': !listaTarefas.length}">
+  <ul *ngIf="listaTarefas.length">
+    <li *ngFor="let item of listaTarefas; let i = index">
+      <input type="checkbox" [(ngModel)]="item.finalizado">
+      <input type="text" [(ngModel)]="item.tarefa">
 
       <button>
         <img src="assets/icons/icon-trash.svg" alt="">
@@ -12,4 +12,4 @@
 </section>
 
 <app-campo-adicionar-itens></app-campo-adicionar-itens>
-<app-botao-exclusao-total></app-botao-exclusao-total>
+<app-botao-exclusao-total *ngIf="listaTarefas.length"></app-botao-exclusao-total>
