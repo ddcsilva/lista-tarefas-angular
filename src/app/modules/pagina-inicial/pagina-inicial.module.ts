@@ -1,5 +1,7 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 // Components
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
@@ -18,6 +20,6 @@ import { PaginaInicialComponent } from './pages/pagina-inicial/pagina-inicial.co
     ListaTarefasComponent,
     PaginaInicialComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
 })
 export class PaginaInicialModule {}
